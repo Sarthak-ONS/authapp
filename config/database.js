@@ -1,16 +1,19 @@
-const { default: mongoose } = require("mongoose");
+const mongoose = require('mongoose')
 
+const { MONGODB_URL } = process.env
 
 
 exports.connect = () => {
-    mongoose.connect(process.env.MONGODB_URL, {
+    mongoose.connect(MONGODB_URL, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
-        .then(console.log("DB Connected Successfully"))
-        .catch(error => {
-            console.log("DB Connection Failed");
+        .then(console.log("DB CONNECTED SUCCESSFULLY!"))
+        .catch((error) => {
+            console.log("DB CONNECTION FAILED");
             console.log(error);
-            process.exit(1);
+            process.exit(1)
         })
+
+
 }
