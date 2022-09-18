@@ -2,13 +2,13 @@ const jwt = require('jsonwebtoken')
 
 const auth = (req, res, next) => {
 
-    
+
     console.log(req.cookies);
     const token = req.cookies.token
 
-    // ||
-    //     req.body.token ||
-    //     req.header("Authorization").replace("Bearer ", "")
+        ||
+        req.body.token ||
+        req.header("Authorization").replace("Bearer ", "")
 
     console.log(`The token value :`);
     console.log(token);
